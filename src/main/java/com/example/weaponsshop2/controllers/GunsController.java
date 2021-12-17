@@ -1,5 +1,6 @@
 package com.example.weaponsshop2.controllers;
 
+import com.example.weaponsshop2.dtos.GunDto;
 import com.example.weaponsshop2.models.Gun;
 import com.example.weaponsshop2.services.GunsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,11 @@ public class GunsController {
     @GetMapping(value = "/getAll")
     public ArrayList<Gun> getAll() {
         return gunsService.getAll();
+    }
+
+    @GetMapping(value = "/getAllForMobile")
+    public ArrayList<GunDto> getAllForMobile() {
+        return gunsService.getAllForMobile();
     }
 
     @GetMapping(value = "/getById/{id}")
